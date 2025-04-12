@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #f8fafc;
+  --header-color: #ffffff;
+  --sidebar-color: #ffffff;
+  --tool-color: #f1f5f9;
+  --text-color: #1e293b;
+  --hover-color: #e2e8f0;
+  --button-blue: #3b82f6;
+  --desc-color: #64748b;
+  --link-color: #2563eb;
+}
+
+.dark {
+  --bg-color: #0f172a;
+  --header-color: #1e293b;
+  --sidebar-color: #1e293b;
+  --tool-color: #334155;
+  --text-color: #f8fafc;
+  --hover-color: #475569;
+  --button-blue: #3b82f6;
+  --desc-color: #94a3b8;
+  --link-color: #60a5fa;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  @apply bg-background text-text transition-colors duration-300;
+}
+
+.glass-morphism {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20;
+}
+
+.button-gradient {
+  @apply bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700;
+}
+
+/* Light mode status colors */
+.light .status-success { @apply bg-green-100 text-green-800 border-green-200; }
+.light .status-error { @apply bg-red-100 text-red-800 border-red-200; }
+.light .status-warn { @apply bg-yellow-100 text-yellow-800 border-yellow-200; }
+
+/* Dark mode status colors */
+.dark .status-success { @apply bg-green-900/30 text-green-200 border-green-700/30; }
+.dark .status-error { @apply bg-red-900/30 text-red-200 border-red-700/30; }
+.dark .status-warn { @apply bg-yellow-900/30 text-yellow-200 border-yellow-700/30; }
+
+.bg-background { background-color: var(--bg-color); }
+.bg-header { background-color: var(--header-color); }
+.bg-sidebar { background-color: var(--sidebar-color); }
+.bg-tool { background-color: var(--tool-color); }
+.bg-button { background-color: var(--button-blue); }
+.bg-hover { background-color: var(--hover-color); }
+.text-text { color: var(--text-color); }
+.text-desc { color: var(--desc-color); }
+.text-link { color: var(--link-color); }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500 dark:bg-gray-500;
+}
